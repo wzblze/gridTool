@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/lib/jquery-1.11.0.min.js"></script>
+    <title>栅格图片与代码自动生成工具</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="text-primary text-center ewb-title">
+            栅格图片与代码自动生成工具
+        </h1>
+        <div class="ewb-Explain">
+            <p>
+                1、填入栅格的总宽度及需要分成的栅格个数，数字有效且可以被分成栅格，自动生成对应的栅格信息
+            </p>
+            <p>
+                2、点击生成CSS按钮，弹出栅格CSS代码，可以 “Ctrl+A”，全选代码复制
+            </p>
+            <p>
+                3、点击下载图片按钮，可下载相应栅格图片
+            </p>
+            <p>
+                4、是否适合响应式判断以pad的宽度为760至767计算
+            </p>
+            <p class="text-danger">
+                5、图片为canvas生成，请选择IE高版本及主流浏览器
+            </p>
+        </div>
+        <div class="ewb-wrap">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="totalWidth">栅格总宽度：</label>
+                    <input type="text" class="form-control" id="totalWidth" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                </div>
+                <div class="form-group">
+                    <label for="gridNum">栅格个数：</label>
+                    <input type="text" class="form-control" id="gridNum" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                </div>
+                <button type="button" class="btn btn-success" id="gridBtn">生成</button>
+                <button type="button" class="btn btn-warning" id="padGridBtn">是否适合响应式</button>
+            </form>
+        </div>
+    </div>
+    <div id="picArea"></div>
+
+    <script type="text/x-template" id="canvas-tmpl">
+        {{#items}}
+        <div class="ewb-single-canvas">
+            <div class="ewb-canvas-txt">
+                单个格宽为：{{gridWidth}} 格间距为：{{gridSpacing}}
+            </div>
+            <canvas id="{{canvasId}}" width="{{totalWidth}}" height="100" />
+            <div class="ewb-btns">
+                <button type="button" class="btn btn-primary" id="css-{{canvasId}}">生成css代码</button>
+                <button type="button" class="btn btn-warning" id="btn-{{canvasId}}">下载图片</button>
+            </div>
+
+        </div>
+        {{/items}}
+    </script>
+    <script src="js/lib/mustache.js"></script>
+    <script src="js/lib/layer/layer.js"></script>
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>

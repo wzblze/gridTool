@@ -1,0 +1,53 @@
+
+/**!
+ * 栅格图片与代码自动生成工具
+ * author: wuzhou
+ * date:2017-08-13
+ */
+ 
+ .ewb-wrap {
+ 	padding-top: 30px;
+ }
+
+ #picArea {
+ 	text-align: center;
+ }
+ .ewb-canvas-txt {
+ 	border-top: 4px solid #ccc;
+ 	border-bottom: 1px dashed #ccc;
+ 	padding: 20px 0;
+ 	margin: 20px 0;
+ 	font-size: 16px;
+ }
+
+ .ewb-single-canvas:first-child .ewb-canvas-txt{
+	border-top: transparent;
+ }
+
+ .ewb-btns {
+ 	padding-top: 10px;
+ }
+
+  .ewb-btns .btn {
+  	margin-right: 20px;
+  }
+
+  .ewb-single-canvas {
+  	padding-bottom: 20px;
+  }
+
+  .ewb-nullInfo {
+  	font-size: 24px;
+  	line-height: 72px;
+  	display: block;
+  	
+  	margin: 50px auto 0;
+  	border: 2px dashed #ccc;
+  }
+
+  .ewb-Explain {
+  	margin-top: 30px;
+  	border: 2px dashed #ccc;
+  	padding: 20px;
+  	min-height: 50px;
+  }

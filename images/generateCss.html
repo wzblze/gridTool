@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/lib/jquery-1.11.0.min.js"></script>
+    <title>生成</title>
+    <style type="text/css">
+		body {
+			padding: 10px;
+			color: #fff;
+			background-color: #0c1021;
+		}
+    </style>
+</head>
+
+<body>
+	
+</body>
+<script src="../js/lib/layer/layer.js"></script>
+ <script>
+ (function($){
+ 	var ary = location.href.split("&");
+ 	if(ary.length) {
+ 		var str = "";
+		   for (var i = 1; i <= ary[2]; i++) {
+		       str += "<br/>.ewb-span" + i + "&nbsp;{<br/>&nbsp;&nbsp;float: left;<br/>&nbsp;&nbsp;width:" + (ary[1] * i + (i - 1) * ary[3]) + "px;<br/>}";
+		   }
+		   $('body').append(str);
+ 	}
+	
+ }(jQuery));
+ </script>
+</html>
